@@ -101,35 +101,7 @@
         <div class="container">
             <div class="row">
 
-                <div id="posts" class="span9">
-
-                	{% for post in site.posts %}
-                	<div class="post-item">
-                        <div class="post-preview"><img src="assets/media/posts/post_4_680x300.jpg" alt=""></div>
-                        <h5><a href="blog-post-rs.html"><span class="post-icon-type"><i class="icon-file icon-white"></i></span></a><a href="{{ post.url }}">{{ post.title }}</a></h5>
-                        <div class="post-details">
-                            <p><span class="detail">Posted:</span> {{ post.date | date: '%b %d, %Y' }}</p>
-                            <p><span class="detail">By:</span> {{ post.author }}</p>
-                            <!-- <p><span class="detail">Comments:</span> <a href="#comments">12</a></p> -->
-                        </div>
-                        <div class="post-content">
-                        	<h6>{{ post.tagline }}</h6>
-                        	{{ post.sample }}
-                            <a href="{{ post.url }}" class="btn">Read →</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="seperator"></div>
-                    </div>
-                    {% endfor %}
-
-                    <div class="pages-nav">
-                        {% if paginator.previous_page %}<a href="{{ paginatior.previous_page }}" class="btn">←</a>{% endif %}
-                        <a href="#" class="btn btn-info">1</a>
-                        <a href="#" class="btn">2</a>
-                        <a href="#" class="btn">3</a>
-                        <a href="#" class="btn">→</a>
-                    </div>
-                </div><!--#posts.span9-->
+                {{ content }}
 
                 <div id="sidebar" class="span3">
                     <div class="row">
