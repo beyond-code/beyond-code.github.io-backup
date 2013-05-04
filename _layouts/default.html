@@ -13,75 +13,26 @@
     <div id="header" class="homepage">
         <div class="container">
             <div class="logo-wrapper">
-                <div class="logo"><a href="index.html"><img src="assets/img/logo.png" alt="" /></a></div>
+                <div class="logo"><a href="/"><img src="/assets/img/logo.png" alt="" /></a></div>
                 <div class="slogan"><h2>Open Sourced Developer Habits</h2></div>
                 <div class="clearfix"></div>
             </div>
             <div id="mobile-menu"></div>
             <ul id="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="features-typography.html">Features</a>
+                <li><a href="/">Home</a></li>
+                <li><a href="blog-rs.html">Categories</a>
                     <ul>
-                        <li><a href="features-columns.html">Columns</a></li>
-                        <li><a href="features-elements.html">Elements</a>
-                            <ul>
-                                <li><a href="features-elements.html">Alert boxes</a></li>
-                                <li><a href="features-elements.html">Buttons</a></li>
-                                <li><a href="features-elements.html">Labels</a></li>
-                                <li><a href="features-elements.html">Progress Bars</a></li>
-                                <li><a href="features-elements.html">Wells</a></li>
-                                <li><a href="features-elements.html">Standard List</a></li>
-                                <li><a href="features-elements.html">Togglable Tabs</a></li>
-                                <li><a href="features-elements.html">Accordion</a></li>
-                                <li><a href="features-elements.html">Tooltips</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="features-pricing-table.html">Pricing tables</a></li>
-                        <li><a href="features-faq.html">F.A.Q</a></li>
-                        <li><a href="features-typography.html">Typography</a></li>
-                        <li><a href="features-tables.html">Tables</a></li>
-                        <li><a href="features-slideshow.html">Slideshow</a></li>
-                        <li><a href="features-list-styles.html">List styles</a></li>
-                        <li><a href="#">Third level example</a>
-                            <ul>
-                                <li><a href="#">It is just</a></li>
-                                <li><a href="#">An example for</a></li>
-                                <li><a href="#">Third level dropdown</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="projects-three.html">Projects</a>
-                    <ul>
-                        <li><a href="projects-four.html">4 Columns</a></li>
-                        <li><a href="projects-three.html">3 Columns (default)</a></li>
-                        <li><a href="projects-three-nograyscale.html">3 Columns no grayscale</a></li>
-                        <li><a href="projects-two.html">2 Columns</a></li>
-                        <li><a href="projects-item.html">Single project (default)</a>
-                            <ul>
-                                <li><a href="projects-item.html">Single Project (default)</a></li>
-                                <li><a href="projects-item-2.html">Single Project Layout 2</a></li>
-                                <li><a href="projects-item-3.html">Single Project Layout 3</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="current"><a href="blog-rs.html">Blog</a>
-                    <ul>
-                        <li class="current"><a href="blog-rs.html">Right sidebar</a></li>
+                        <li><a href="blog-rs.html">Right sidebar</a></li>
                         <li><a href="blog-ls.html">Left sidebar</a></li>
                         <li><a href="blog-post.html">Blog post example</a></li>
                         <li><a href="blog-post-rs.html">Blog post - Right sidebar</a></li>
                         <li><a href="blog-post-ls.html">Blog post - Left sidebar</a></li>
                     </ul>
                 </li>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul><!--#menu-->
-        </div><!--.container-->
-    </div><!--#header-->
-
+                <li><a href="/contribute.html">Contribute</a></li>
+            </ul>
+        </div>
+    </div>
 
     {% if layout == 'post' %}
     <div id="page-info">
@@ -94,8 +45,6 @@
         </div>
     </div>
     {% endif %}
-
-
 
     <div id="content">
         <div class="container">
@@ -112,31 +61,11 @@
 
                         <div class="widget widget-latest-posts span3">
                             <h4>Latest Posts</h4>
-                            <h5><a href="#">Modern concepts of architecture</a></h5>
+                            {% for post in site.posts limit:3 %}
+                            <h5><a href="#">{{ post.title }}</a></h5>
                             <p>24 Apr, 2012 - <a href="#">No Comments</a></p>
-                            <h5><a href="#">Early modern and the industrial age</a></h5>
-                            <p>24 Apr, 2012 - <a href="#">10 Comments</a></p>
-                            <h5><a href="#">Renaissance and the architect</a></h5>
-                            <p>24 Apr, 2012 - <a href="#">No Comments</a></p>
-                        </div><!--.widget-latest-posts-->
-
-                        <div class="span3 widget widget-tabs">
-                            <h4>Tabs Widget</h4>
-                            <div class="tabbable">
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#tabA" data-toggle="tab">Tab I</a></li>
-                                    <li><a href="#tabB" data-toggle="tab">Tab II</a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="tabA">
-                                        <p>Sonet omnium fuisset ne usu, cum feugiat probatus indoctum ex, eum scripta iuvaret periculis ex, an sonet putent per.</p>
-                                    </div>
-                                    <div class="tab-pane" id="tabB">
-                                        <p>No dicant commune definitiones qui, volumus corpora verterem cum in, has in maiorum repudiare disputationi. Quo alia movet ea, usu cu meis iudico phaedrum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!--.widget-tabs-->
+                            {% endfor %}
+                        </div>
 
                         <div class="widget widget-faq span3">
                             <h4>F.A.Q</h4>
@@ -182,30 +111,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--.widget-faq-->
-
-
-                        <div class="widget widget-archive span3">
-                            <h4>Archive</h4>
-                            <div class="btn-group">
-                                <button class="btn dropdown-toggle" data-toggle="dropdown">Select&nbsp;&nbsp;&nbsp;<span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">February 2012</a></li>
-                                    <li><a href="#">March 2012</a></li>
-                                    <li><a href="#">April 2012</a></li>
-                                    <li><a href="#">May 2012</a></li>
-                                    <li><a href="#">June 2012</a></li>
-                                    <li><a href="#">July 2012</a></li>
-                                </ul>
-                            </div>
                         </div>
-                    </div><!--.row.span3-->
-                </div><!--#sidebar.span3-->
 
-            </div><!--.row-->
-        </div><!--.container-->
-    </div><!--#content-->
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
 
 
     <div id="footer">
@@ -241,7 +154,6 @@
     </div>
 
 
-
     <div id="copyrights">
         <div class="container">
             <div class="row">
@@ -249,36 +161,33 @@
                     <p><a href="#">beyondco.de</a> 2013 all rights reserved. <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
                 </div>
                 <div class="logo2 span6">
-                    <p><img src="assets/img/logo.png" alt="" /></p>
+                    <p><img src="/assets/img/logo.png" alt="" /></p>
                 </div>
             </div>
         </div>
     </div>
 
 
-
     <!--Scripts-->
-    <script type="text/javascript" src="assets/js/jquery/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/jquery/jquery-ui.js"></script>
-    <script type="text/javascript" src="assets/js/jquery/jquery.bgpos.js"></script>
-    <script type="text/javascript" src="assets/js/jquery/jquery.easing.1.3.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/js/lightbox.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/demo.js"></script>
-    <script type="text/javascript" src="assets/js/hoverIntent.js"></script>
-    <script type="text/javascript" src="assets/js/superfish.js"></script>
-    <script type="text/javascript" src="assets/js/supersubs.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="assets/js/slideshow.js"></script>
-    <script type="text/javascript" src="assets/js/rotate-scale.js"></script>
-    <script type="text/javascript" src="assets/js/transform.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.hoverizr.min.js"></script>
-    <script type="text/javascript" src="assets/js/mobilemenu.min.js"></script>
-
-
+    <script type="text/javascript" src="/assets/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery/jquery.bgpos.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery/jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="/assets/js/lightbox.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/demo.js"></script>
+    <script type="text/javascript" src="/assets/js/hoverIntent.js"></script>
+    <script type="text/javascript" src="/assets/js/superfish.js"></script>
+    <script type="text/javascript" src="/assets/js/supersubs.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="/assets/js/slideshow.js"></script>
+    <script type="text/javascript" src="/assets/js/rotate-scale.js"></script>
+    <script type="text/javascript" src="/assets/js/transform.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.hoverizr.min.js"></script>
+    <script type="text/javascript" src="/assets/js/mobilemenu.min.js"></script>
 
 
 </body>

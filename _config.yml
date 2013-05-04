@@ -5,5 +5,5 @@ permalink: /:categories/:title
 exclude: ["README.md"]
 auto: true
 pygments: true
-lsi: true
+lsi: false
 paginate: 5

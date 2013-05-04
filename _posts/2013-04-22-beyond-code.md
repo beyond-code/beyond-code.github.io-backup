@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Beyond Code"
+category: "general"
 tagline: "Open Sourced Developer Habits"
 author: "Jeremy Wilken"
 avatar: "http://en.gravatar.com/userimage/2016544/603c4f883001499201437bc9e41bc91c.jpeg"
